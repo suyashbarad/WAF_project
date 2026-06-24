@@ -1,0 +1,8 @@
+Input: hello
+Output: SAFE
+
+Input: login?user=admin' OR 1=1 --
+Output: BLOCKED
+
+Input: <script>alert(1)</script>
+Output: BLOCKED
