@@ -1,0 +1,5 @@
+Safe! == ( hello normal request ) 
+Safe! == ( GET /home ) 
+Blocked! == ( login?user=admin' OR 1=1 -- ) 
+Blocked! == ( <script>alert(1)</script> ) 
+Safe! == ( normal browsing request )
