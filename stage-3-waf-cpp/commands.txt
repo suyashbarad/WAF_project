@@ -1,0 +1,2 @@
+g++ waf.cpp -o waf
+./waf
