@@ -1,0 +1,5 @@
+hello normal request
+GET /home
+login?user=admin' OR 1=1 --
+<script>alert(1)</script>
+normal browsing request
