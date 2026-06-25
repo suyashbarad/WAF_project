@@ -1,0 +1,7 @@
+hello user -> SAFE
+GET /home -> SAFE
+login?user=admin' OR 1=1 -- -> BLOCKED
+<script>alert(1)</script> -> BLOCKED
+
+if code runs one more time then instead of erasing the old data and pasting new data
+the code will only append the log file that is, it will keep the old data also in the log file
