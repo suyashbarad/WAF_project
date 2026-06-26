@@ -1,0 +1,29 @@
+IP: 192.168.1.1
+Request == ( GET /home )
+Status: Safe
+-------------------------------------------
+IP: 192.168.1.2
+Request == ( login?user=admin' OR 1=1 -- )
+Status: Blocked
+Times attacked: 1
+-------------------------------------------
+IP: 192.168.1.2
+Request == ( UNION SELECT username,password )
+Status: Blocked
+Times attacked: 2
+-------------------------------------------
+IP: 192.168.1.2
+Request == ( DROP TABLE users )
+Status: Blocked
+Times attacked: 3
+-------------------------------------------
+IP: 192.168.1.2
+Request == ( <script>alert(1)</script> )
+Status: Blocked
+Times attacked: 4
+Blocked: 192.168.1.2 attacked more than 3 times (4 times)
+-------------------------------------------
+--------------Attack Summary----------------
+
+192.168.1.2 == 4 times -- WARNING
+192.168.1.4 == 1 times
