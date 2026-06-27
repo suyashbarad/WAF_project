@@ -1,0 +1,63 @@
+IP: 192.168.1.0
+Request == (  hello normal request ) 
+Status: Safe
+-------------------------------------------
+IP: 192.168.1.1
+Request == (  GET /home ) 
+Status: Safe
+-------------------------------------------
+IP: 192.168.1.2
+Request == (  login?user=admin' OR 1=1 -- ) 
+Status: Blocked
+Times attacked: 1
+-------------------------------------------
+IP: 192.168.1.3
+Request == (  <script>alert(1)</script> ) 
+Status: Blocked
+Times attacked: 1
+-------------------------------------------
+IP: 192.168.1.3
+Request == (  <script>alert(1)</script> ) 
+Status: Blocked
+Times attacked: 2
+-------------------------------------------
+IP: 192.168.1.4
+Request == (  SELECT * FROM USERS; ) 
+Status: Blocked
+Times attacked: 1
+-------------------------------------------
+IP: 192.168.1.4
+Request == (  SELECT * FROM USERS; ) 
+Status: Blocked
+Times attacked: 2
+-------------------------------------------
+IP: 192.168.1.4
+Request == (  SELECT * FROM USERS; ) 
+Status: Blocked
+Times attacked: 3
+-------------------------------------------
+IP: 192.168.1.4
+Request == (  SELECT * FROM USERS; ) 
+Status: Blocked
+Times attacked: 4
+-------------------------------------------
+Blocked: 192.168.1.4 attacked more than 4 times (4 times)
+-------------------------------------------
+IP: 192.168.1.4
+Request == (  SELECT * FROM USERS; ) 
+Status: Blocked
+Times attacked: 5
+-------------------------------------------
+Blocked: 192.168.1.4 attacked more than 4 times (5 times)
+-------------------------------------------
+IP: 192.168.1.5
+Request == (  DROP TABLE USERS; ) 
+Status: Blocked
+Times attacked: 1
+-------------------------------------------
+
+--------------Attack Summary----------------
+192.168.1.2 == 1 times
+192.168.1.3 == 2 times
+192.168.1.4 == 5 times -- WARNING
+192.168.1.5 == 1 times
