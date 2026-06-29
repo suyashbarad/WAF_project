@@ -1,0 +1,26 @@
+1. Server.cpp output: 
+
+  Socket opened successfully
+  Bind successful! 
+  Server is listening...
+  Waiting for a client to connect...
+  
+  CLient connected! 
+  Recieved request from client
+  Response sent! 
+
+2. Client.cpp output: 
+
+  Socket opened successfully
+  connection successful! 
+  Request sent to server
+  
+  Server replied: HTTP/1.1 200 OK
+
+3. commands used:
+  open two terminals one for server.cpp and one for client.cpp
+    - server.cpp terminal: g++ server.cpp
+                         ./a.out
+    - client.cpp terminal: g++ client.cpp
+                         ./a.out
+  
