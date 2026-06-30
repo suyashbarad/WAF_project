@@ -95,12 +95,12 @@ int main(){
         memset(buffer, 0, sizeof(buffer));
         recv(clientSocket, buffer, sizeof(buffer), 0);
 
-        stringstream ss(line);           //stringstream extracts first string of line and names it as "line";
+        string request = buffer;
+        stringstream ss(request);           //stringstream extracts first string of line and names it as "line";
         
         string ip;
         ss >> ip;
-        string request = buffer;
-        
+
         cout<<"Recieved request from client"<<endl<<endl;
             if(isSQL_XSS_Inject(request)){
 
