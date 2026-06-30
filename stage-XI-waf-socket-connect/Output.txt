@@ -1,0 +1,53 @@
+1. Client side output:
+      Socket opened successfully
+
+      connection successful! 
+      - Enter request: get /home
+      Request sent to server
+      
+      - Server replied: Forwarded to backend
+                                            ./a.out
+      Socket opened successfully
+      
+      connection successful! 
+      - Enter request: <script>alert(1)</script>
+      Request sent to server
+      
+      - Server replied: http/1.1 403 forbidden
+                                            ./a.out
+      Socket opened successfully
+      
+      connection successful! 
+      - Enter request: <script>alert(1)</script>
+      Request sent to server
+      
+      - Server replied: http/1.1 403 forbidden
+                                            ./a.out
+      Socket opened successfully
+      
+      connection successful! 
+      - Enter request: hello world
+      Request sent to server
+      
+      - Server replied: Forwarded to backend
+2. Server side file:
+
+      Socket opened successfully
+      
+      Bind successful! 
+      Server is listening...CLient connected! 
+      Recieved request from client
+      
+      - Request accepted
+      CLient connected! 
+      Recieved request from client
+      
+      - Request blocked
+      CLient connected! 
+      Recieved request from client
+      
+      - Request blocked
+      CLient connected! 
+      Recieved request from client
+      
+      - Request accepted
