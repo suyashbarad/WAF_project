@@ -1,0 +1,12 @@
+IP: 127.0.0.1
+Request == ( /login?username=adminOR_1=1 ) 
+Status: Blocked
+Times attacked: 1
+-------------------------------------------
+IP: 127.0.0.1
+Request == ( get /home HTTP/1.1 ) 
+Status: Safe
+-------------------------------------------
+IP: 127.0.0.1
+Request == ( /hello ) 
+Status: Invalid Request
