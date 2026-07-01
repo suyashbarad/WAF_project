@@ -1,0 +1,95 @@
+1. Client Output:
+      Socket opened successfully
+      connection successful! 
+      Method : get
+      Path : /login?username=adminOR_1=1
+      Request sent to server
+      
+      Server replied: http/1.1 403 forbidden
+      Attack try
+      RUN
+      
+      connection successful! 
+      Method : get
+      Path : /home
+      Request sent to server
+      
+      Server replied: HTTP/1.1 
+      200 OK
+      
+      Welcome to Backend Server!
+      RUN
+      Socket opened successfully
+      
+      connection successful! 
+      Method : home
+      Path : /hello world
+      Request sent to server
+      
+      Server replied: HTTP/1.1 400 Bad Request
+2. Server Output:
+      Socket opened successfully
+      
+      Bind successful! 
+      Server is listening...CLient connected! 
+      Request received by WAF: get /login?username=adminOR_1=1 HTTP/1.1
+      --------------Parser request----------------
+      IP: 127.0.0.1
+      Method  = [get]
+      Path    = [/login?username=adminOR_1=1]
+      Version = [HTTP/1.1]
+      Recieved request from client
+      
+      Request = [/login?username=adminOR_1=1]
+      Rule = [OR_1=1]
+      MATCH FOUND!
+      Request blocked
+      CLient connected! 
+      Request received by WAF: get /home HTTP/1.1
+      --------------Parser request----------------
+      IP: 127.0.0.1
+      Method  = [get]
+      Path    = [/home]
+      Version = [HTTP/1.1]
+      Recieved request from client
+      
+      Request = [/home]
+      Rule = [OR_1=1]
+      Rule = ['--]
+      Rule = [SELECT * FROM]
+      Rule = [UNION SELECT]
+      Rule = [DROP TABLE]
+      Rule = [<script>]
+      Rule = [javascript:]
+      Rule = [onerror=]
+      NO MATCH FOUND
+      connection Successful !
+      Request recieves from user
+      Safe request forwarded successfully! 
+      Request accepted
+      CLient connected! 
+      Request received by WAF: home /hello world HTTP/1.1
+      --------------Parser request----------------
+      IP: 127.0.0.1
+      Method  = [home]
+      Path    = [/hello]
+      Version = [world]
+      Recieved request from client
+3. Backend Output:
+      Client Connected
+      Received Request:
+      get /1=1 HTTP/1.1
+      Response Sent
+      Client Disconnected
+      
+      Client Connected
+      Received Request:
+      get OR 1=1 HTTP/1.1
+      Response Sent
+      Client Disconnected
+      
+      Client Connected
+      Received Request:
+      get /home HTTP/1.1
+      Response Sent
+      Client Disconnected
