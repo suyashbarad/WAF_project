@@ -1,0 +1,160 @@
+==========================================================
+            WEB APPLICATION FIREWALL (DAY 15)
+==========================================================
+
+Starting WAF...
+
+Socket opened successfully
+Bind successful!
+Server is listening...
+
+----------------------------------------------------------
+
+Client Connected!
+
+Request received by WAF:
+GET <script>alert(1)</script>
+
+--------------Parser request----------------
+IP      : 127.0.0.1
+Method  : GET
+Path    : <script>alert(1)</script>
+
+Scanning request...
+
+Rule = or\s+1\s*=\s*1
+Rule = '--
+Rule = select\s+\*\s+from
+Rule = union\s+select
+Rule = drop\s+table
+Rule = <script\s*>
+
+MATCH FOUND!
+
+Attack Type : Cross Site Scripting (XSS)
+Action      : Request Blocked
+
+Response Sent:
+HTTP/1.1 403 Forbidden
+
+----------------------------------------------------------
+
+Client Connected!
+
+Request received by WAF:
+GET UNION        SELECT
+
+--------------Parser request----------------
+IP      : 127.0.0.1
+Method  : GET
+Path    : UNION        SELECT
+
+Scanning request...
+
+MATCH FOUND!
+
+Attack Type : SQL Injection
+Action      : Request Blocked
+
+Response Sent:
+HTTP/1.1 403 Forbidden
+
+----------------------------------------------------------
+
+Client Connected!
+
+Request received by WAF:
+GET OR      1 = 1
+
+--------------Parser request----------------
+IP      : 127.0.0.1
+Method  : GET
+Path    : OR      1 = 1
+
+Scanning request...
+
+MATCH FOUND!
+
+Attack Type : SQL Injection
+Action      : Request Blocked
+
+Response Sent:
+HTTP/1.1 403 Forbidden
+
+----------------------------------------------------------
+
+Client Connected!
+
+Request received by WAF:
+INVALID /home
+
+--------------Parser request----------------
+IP      : 127.0.0.1
+Method  : INVALID
+Path    : /home
+
+Invalid HTTP Method
+
+Response Sent:
+HTTP/1.1 400 Bad Request
+
+----------------------------------------------------------
+
+Client Connected!
+
+Request received by WAF:
+GET /AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Request Size : 312 Bytes
+Maximum Size : 256 Bytes
+
+Payload Too Large
+
+Response Sent:
+HTTP/1.1 413 Payload Too Large
+
+----------------------------------------------------------
+
+Client Connected!
+
+Request received by WAF:
+GET /home
+
+--------------Parser request----------------
+IP      : 127.0.0.1
+Method  : GET
+Path    : /home
+
+Scanning request...
+
+NO MATCH FOUND
+
+Connecting to Backend...
+Connection Successful!
+
+Forwarding Request...
+
+Backend Response:
+HTTP/1.1 200 OK
+
+Welcome to Backend Server!
+
+Safe request forwarded successfully!
+
+----------------------------------------------------------
+
+=============== SECURITY TEST REPORT ===============
+
+SQL Injection Detection       : PASS
+XSS Detection                 : PASS
+Regex Rule Matching           : PASS
+Case-Insensitive Detection    : PASS
+Invalid Method Detection      : PASS
+Oversized Request Blocking    : PASS
+Safe Request Forwarding       : PASS
+Backend Communication         : PASS
+Logging                       : PASS
+
+====================================================
+All security checks completed successfully.
+====================================================
