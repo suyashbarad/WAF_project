@@ -1,0 +1,37 @@
+========================================
+Time   : 2026-07-03 18:46:23
+IP     : 127.0.0.1
+Method : get
+Request: Method : GET HTTP/1.1
+Status : Safe
+========================================
+========================================
+Time   : 2026-07-03 18:47:25
+IP     : 127.0.0.1
+Method : get
+Request: Method : GET HTTP/1.1
+Status : Safe
+========================================
+========================================
+Time   : 2026-07-03 18:59:02
+IP     : 127.0.0.1
+Method : get
+Request: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa HTTP/1.1
+Status : Safe
+========================================
+========================================
+Time   : 2026-07-03 19:00:16
+IP     : 127.0.0.1
+Method : get
+Request: <script>alert(1)</script> HTTP/1.1
+Status : Blocked
+Times blocked: 0
+========================================
+========================================
+Time   : 2026-07-03 19:16:40
+IP     : 127.0.0.1
+Method : get
+Request: /Hello world HTTP/1.1
+Status : Safe
+Request size = 25
+========================================
