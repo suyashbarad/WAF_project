@@ -1,0 +1,28 @@
+========================================
+Time   : 2026-07-04 00:13:15
+IP     : 127.0.0.1
+Method : get
+Request: hello world
+Status : Safe, Backend file.
+Request size = 80
+========================================
+-------------------------------------------
+========================================
+Time   : 2026-07-04 00:13:33
+IP     : 127.0.0.1
+Method : delete
+Request: andompage
+Status : Blocked
+Action : Not a whitelisted request
+Times blocked: 0
+Request size = 81
+========================================
+========================================
+Time   : 2026-07-04 00:14:03
+IP     : 127.0.0.1
+Method : post
+Request:  <script>
+Status : Blocked
+Action : Rate limit exceeded 
+Request size = 78
+========================================
