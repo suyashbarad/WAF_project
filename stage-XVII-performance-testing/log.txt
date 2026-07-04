@@ -1,0 +1,29 @@
+========================================
+Time   : 2026-07-04 00:54:05
+IP     : 127.0.0.1
+Method : get
+Request: hello world
+Status : Safe, Backend file.
+Request size = 80
+========================================
+-------------------------------------------
+Processing Time : 2 ms
+========================================
+Time   : 2026-07-04 00:54:14
+IP     : 127.0.0.1
+Method : get
+Request: hello
+Status : Safe, Backend file.
+Request size = 74
+========================================
+-------------------------------------------
+Processing Time : 2 ms
+========================================
+Time   : 2026-07-04 00:54:37
+IP     : 127.0.0.1
+Method : get
+Request:  <script>
+Status : Blocked
+Action : Rate limit exceeded 
+Request size = 77
+========================================
